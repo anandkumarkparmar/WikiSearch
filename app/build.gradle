@@ -1,0 +1,55 @@
+apply plugin: 'com.android.application'
+apply plugin: 'realm-android'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "in.anandkparmar.wikisearch"
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    api 'com.android.support:appcompat-v7:28.0.0-beta01'
+    api 'com.android.support:design:28.0.0-beta01'
+
+    // ButterKnife
+    api 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    // ButterKnife
+
+    // RxAndroid
+    api 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    api 'io.reactivex.rxjava2:rxjava:2.1.16'
+    // RxAndroid
+
+    // Retrofit
+    api 'com.squareup.retrofit2:retrofit:2.4.0'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+    // Retrofit
+
+    // Gson
+    api 'com.google.code.gson:gson:2.8.5'
+    api 'com.squareup.retrofit2:converter-gson:2.4.0'
+    // Gson
+
+    // Logging Interceptor
+    api 'com.squareup.okhttp3:logging-interceptor:3.9.1'
+    // Logging Interceptor
+
+    // Picasso
+    api 'com.squareup.picasso:picasso:2.71828'
+    // Picasso
+}
